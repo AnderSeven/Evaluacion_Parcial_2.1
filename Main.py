@@ -189,6 +189,11 @@ class ReinaIndependenciaApp:
                 cultura = float(cultura_str)
                 proyeccion = float(proyeccion_str)
                 entrevista = float(entrevista_str)
+
+                if not (0 <= cultura <= 10 and 0 <= proyeccion <= 10 and 0 <= entrevista <= 10):
+                    messagebox.showerror("Puntaje Invalido", "Las calificaciones deben estar entre 0 y 10.", parent=ventana_calificar)
+                    return
+
             except ValueError:
                 messagebox.showerror("Error de Formato", "Las calificaciones deben ser numeros.", parent=ventana_calificar)
                 return
